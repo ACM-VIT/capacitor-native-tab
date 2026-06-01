@@ -1,5 +1,5 @@
 {
-  "name": "capacitor-native-tabs",
+  "name": "capacitor-native-tab",
   "version": "1.0.4",
   "description": "Capacitor plugin for native iOS and Android tab bars",
   "main": "dist/plugin.cjs.js",
@@ -8,11 +8,11 @@
   "unpkg": "dist/plugin.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ACM-VIT/capacitor-native-tabs.git"
+    "url": "git+https://github.com/ACM-VIT/capacitor-native-tab.git"
   },
-  "homepage": "https://github.com/ACM-VIT/capacitor-native-tabs",
+  "homepage": "https://github.com/ACM-VIT/capacitor-native-tab",
   "bugs": {
-    "url": "https://github.com/ACM-VIT/capacitor-native-tabs/issues"
+    "url": "https://github.com/ACM-VIT/capacitor-native-tab/issues"
   },
   "files": [
     "android/src/main/",

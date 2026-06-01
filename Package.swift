@@ -9,7 +9,7 @@ let package = Package(
             name: "NativeTabsPlugin",
             targets: ["NativeTabsPlugin"]),
         .library(
-            name: "CapacitorNativeTabs",
+            name: "CapacitorNativeTab",
             targets: ["NativeTabsPlugin"])
     ],
     dependencies: [

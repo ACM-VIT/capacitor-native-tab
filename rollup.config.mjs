@@ -1,4 +1,4 @@
-const banner = "/* capacitor-native-tabs */";
+const banner = "/* capacitor-native-tab */";
 
 export default [
   {
@@ -22,7 +22,7 @@ export default [
       globals: {
         "@capacitor/core": "capacitorExports",
       },
-      name: "capacitorNativeTabs",
+      name: "capacitorNativeTab",
       sourcemap: true,
     },
   },

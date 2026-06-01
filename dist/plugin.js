@@ -1,5 +1,5 @@
-/* capacitor-native-tabs */
-var capacitorNativeTabs = (function (exports, core) {
+/* capacitor-native-tab */
+var capacitorNativeTab = (function (exports, core) {
     'use strict';
 
     class NativeTabsWeb extends core.WebPlugin {

@@ -1,4 +1,4 @@
-/* capacitor-native-tabs */
+/* capacitor-native-tab */
 'use strict';
 
 var core = require('@capacitor/core');

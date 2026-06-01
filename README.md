@@ -1,4 +1,4 @@
-# capacitor-native-tabs
+# capacitor-native-tab
 
 Native tab bars for Capacitor apps.
 
@@ -9,14 +9,14 @@ Native tab bars for Capacitor apps.
 ## Install
 
 ```sh
-npm install capacitor-native-tabs
+npm install capacitor-native-tab
 npx cap sync
 ```
 
 ## Usage
 
 ```ts
-import { NativeTabs, type TabConfig } from "capacitor-native-tabs";
+import { NativeTabs, type TabConfig } from "capacitor-native-tab";
 
 const tabs: TabConfig[] = [
   { title: "Home", systemImage: "house.fill", route: "/" },
