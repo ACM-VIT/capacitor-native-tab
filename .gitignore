@@ -1,0 +1,21 @@
+node_modules/
+
+# JavaScript build caches and local packages
+*.tsbuildinfo
+*.tgz
+
+# SwiftPM and CocoaPods
+.build/
+ios/Pods/
+ios/Plugin.xcworkspace/
+ios/DerivedData/
+ios/**/*.xcuserdata/
+ios/**/*.xcuserstate
+
+# Android/Gradle
+android/.gradle/
+android/build/
+
+# OS/editor noise
+.DS_Store
+.idea/

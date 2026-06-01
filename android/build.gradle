@@ -1,0 +1,79 @@
+ext {
+    javaVersion = rootProject.ext.has('javaVersion') ? rootProject.ext.javaVersion : '17'
+    composeBomVersion = rootProject.ext.has('composeBomVersion') ? rootProject.ext.composeBomVersion : '2026.05.00'
+    androidxActivityVersion = rootProject.ext.has('androidxActivityVersion') ? rootProject.ext.androidxActivityVersion : '1.8.0'
+    androidxAppCompatVersion = rootProject.ext.has('androidxAppCompatVersion') ? rootProject.ext.androidxAppCompatVersion : '1.6.1'
+    androidxCoordinatorLayoutVersion = rootProject.ext.has('androidxCoordinatorLayoutVersion') ? rootProject.ext.androidxCoordinatorLayoutVersion : '1.2.0'
+    androidxCoreVersion = rootProject.ext.has('androidxCoreVersion') ? rootProject.ext.androidxCoreVersion : '1.12.0'
+    androidxFragmentVersion = rootProject.ext.has('androidxFragmentVersion') ? rootProject.ext.androidxFragmentVersion : '1.6.2'
+}
+
+buildscript {
+    def androidGradlePluginVersion = rootProject.ext.has('androidGradlePluginVersion') ? rootProject.ext.androidGradlePluginVersion : '8.13.0'
+    def kotlinVersion = rootProject.ext.has('kotlinVersion') ? rootProject.ext.kotlinVersion : '2.3.21'
+
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:$androidGradlePluginVersion"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+        classpath "org.jetbrains.kotlin.plugin.compose:org.jetbrains.kotlin.plugin.compose.gradle.plugin:$kotlinVersion"
+    }
+}
+
+apply plugin: 'com.android.library'
+apply plugin: 'org.jetbrains.kotlin.android'
+apply plugin: 'org.jetbrains.kotlin.plugin.compose'
+
+android {
+    namespace "io.github.acmvit.capacitornativetabs"
+    compileSdk project.hasProperty('compileSdkVersion') ? rootProject.ext.compileSdkVersion : 34
+    defaultConfig {
+        minSdkVersion project.hasProperty('minSdkVersion') ? rootProject.ext.minSdkVersion : 22
+        targetSdkVersion project.hasProperty('targetSdkVersion') ? rootProject.ext.targetSdkVersion : 34
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    lintOptions {
+        abortOnError false
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.toVersion(javaVersion)
+        targetCompatibility JavaVersion.toVersion(javaVersion)
+    }
+    buildFeatures {
+        compose true
+    }
+    kotlinOptions {
+        jvmTarget = javaVersion
+    }
+}
+
+repositories {
+    google()
+    mavenCentral()
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':capacitor-android')
+    implementation "androidx.appcompat:appcompat:$androidxAppCompatVersion"
+    implementation "androidx.coordinatorlayout:coordinatorlayout:$androidxCoordinatorLayoutVersion"
+    def composeBom = platform("androidx.compose:compose-bom:$composeBomVersion")
+    implementation composeBom
+    implementation 'androidx.compose.foundation:foundation-layout'
+    implementation 'androidx.compose.material3:material3'
+    implementation 'androidx.compose.ui:ui'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+}

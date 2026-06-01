@@ -1,0 +1,66 @@
+{
+  "name": "capacitor-native-tabs",
+  "version": "1.0.4",
+  "description": "Capacitor plugin for native iOS and Android tab bars",
+  "main": "dist/plugin.cjs.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/esm/index.d.ts",
+  "unpkg": "dist/plugin.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ACM-VIT/capacitor-native-tabs.git"
+  },
+  "homepage": "https://github.com/ACM-VIT/capacitor-native-tabs",
+  "bugs": {
+    "url": "https://github.com/ACM-VIT/capacitor-native-tabs/issues"
+  },
+  "files": [
+    "android/src/main/",
+    "android/src/main/res/",
+    "android/build.gradle",
+    "dist/",
+    "ios/Sources",
+    "Package.swift",
+    "THIRD_PARTY_NOTICES.md",
+    "*.podspec"
+  ],
+  "author": "ACM-VIT",
+  "license": "MIT",
+  "keywords": [
+    "capacitor",
+    "plugin",
+    "native",
+    "tabs",
+    "android",
+    "jetpack-compose",
+    "ios",
+    "swiftui",
+    "material3"
+  ],
+  "devDependencies": {
+    "@capacitor/android": "^8.3.1",
+    "@capacitor/core": "^8.3.1",
+    "@capacitor/ios": "^8.3.1",
+    "rimraf": "^5.0.5",
+    "rollup": "^4.9.5",
+    "typescript": "^6.0.3"
+  },
+  "peerDependencies": {
+    "@capacitor/core": "^8.0.0"
+  },
+  "capacitor": {
+    "ios": {
+      "src": "ios"
+    },
+    "android": {
+      "src": "android"
+    }
+  },
+  "scripts": {
+    "build": "npm run clean && tsc -p tsconfig.json && rollup -c",
+    "clean": "rimraf ./dist",
+    "prepack": "npm run build",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "watch": "tsc --watch -p tsconfig.json"
+  }
+}
