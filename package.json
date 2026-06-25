@@ -38,11 +38,11 @@
     "material3"
   ],
   "devDependencies": {
-    "@capacitor/android": "^8.3.1",
-    "@capacitor/core": "^8.3.1",
-    "@capacitor/ios": "^8.3.1",
-    "rimraf": "^5.0.5",
-    "rollup": "^4.9.5",
+    "@capacitor/android": "^8.4.1",
+    "@capacitor/core": "^8.4.1",
+    "@capacitor/ios": "^8.4.1",
+    "rimraf": "^6.1.3",
+    "rollup": "^4.62.2",
     "typescript": "^6.0.3"
   },
   "peerDependencies": {
